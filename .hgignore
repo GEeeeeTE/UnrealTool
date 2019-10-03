@@ -1,0 +1,4 @@
+syntax: glob
+.vs/*
+UnrealTool/bin/*
+UnrealTool/obj/*

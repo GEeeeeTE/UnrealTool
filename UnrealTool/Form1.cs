@@ -15,6 +15,18 @@ namespace UnrealTool
         public Form1()
         {
             InitializeComponent();
+            FunctionGroupBox.Controls.Find(CategoryTextBox.Name, false);
+        }
+        
+
+        private void FunctionSettingButton_Click(object sender, EventArgs e)
+        {
+            MakeAndCopyUMacro(true);
+        }
+
+        private void PropertySettingButton_Click(object sender, EventArgs e)
+        {
+            MakeAndCopyUMacro(false);
         }
     }
 }

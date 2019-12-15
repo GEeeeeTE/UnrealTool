@@ -52,6 +52,13 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GTCSharpLibrary\CustomControl\GTCheckedListBoxControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GTCSharpLibrary\CustomControl\GTCheckedListBoxControl.Designer.cs">
+      <DependentUpon>GTCheckedListBoxControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GTCSharpLibrary\CustomControl\GTFormControlInterface.cs" />
     <Compile Include="GTCSharpLibrary\GTCS_Class.cs" />
     <Compile Include="GTCSharpLibrary\GTCS_File.cs" />
     <Compile Include="GTCSharpLibrary\GTCS_GTL.cs" />
@@ -73,6 +80,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GTCSharpLibrary\CustomControl\GTCheckedListBoxControl.resx">
+      <DependentUpon>GTCheckedListBoxControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -96,8 +106,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GTCSharpLibrary\CustomControl\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

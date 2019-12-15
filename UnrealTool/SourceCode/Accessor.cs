@@ -15,7 +15,7 @@ namespace UnrealTool
         private string GetFunctionDomain(int index)
         {
             string domain = string.Empty;
-            var items = FunctionCheckedListBox.Items;
+            var items = gtFunctionCheckedListBoxControl.Items;
             string[] templateUFUNCTIONMacros = new string[]
             {
                 "BlueprintCallable",
@@ -30,7 +30,7 @@ namespace UnrealTool
         private string GetPropertyDomain(int index)
         {
             string domain = string.Empty;
-            var items = PropertyCheckedListBox.Items;
+            var items = gtPropertyCheckedListBoxControl.Items;
             string[] templateUPROPERTYMacros = new string[]
             {
                 // ï“èWå†å¿(ReadWrite)

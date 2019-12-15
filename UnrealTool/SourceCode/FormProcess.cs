@@ -16,7 +16,7 @@ namespace UnrealTool
         {
             string macroU = (bFuncOrProp) ? "UFUNCTION" : "UPROPERTY";
             macroU += "(";
-            var indexAvailables = (bFuncOrProp) ? FunctionCheckedListBox.CheckedIndices : PropertyCheckedListBox.CheckedIndices;
+            var indexAvailables = (bFuncOrProp) ? gtFunctionCheckedListBoxControl.CheckedIndices : gtPropertyCheckedListBoxControl.CheckedIndices;
             //GTCS_GTL.ForLoopGT(indexAvailables, delegate (int i, IList<int> val){ }, delegate (){ } );
             for (int i = 0; i < indexAvailables.Count; i++)
             {

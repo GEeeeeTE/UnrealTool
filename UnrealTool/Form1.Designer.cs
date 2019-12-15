@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.FunctionGroupBox = new System.Windows.Forms.GroupBox();
-            this.FunctionCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.FunctionSettingButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.CategoryTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.PropertyCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.PropertySettingButton = new System.Windows.Forms.Button();
+            this.gtPropertyCheckedListBoxControl = new GTCustomControl.GTCheckedListBoxControl();
+            this.gtFunctionCheckedListBoxControl = new GTCustomControl.GTCheckedListBoxControl();
             this.FunctionGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -44,7 +44,7 @@
             // 
             // FunctionGroupBox
             // 
-            this.FunctionGroupBox.Controls.Add(this.FunctionCheckedListBox);
+            this.FunctionGroupBox.Controls.Add(this.gtFunctionCheckedListBoxControl);
             this.FunctionGroupBox.Controls.Add(this.FunctionSettingButton);
             this.FunctionGroupBox.Location = new System.Drawing.Point(8, 56);
             this.FunctionGroupBox.Name = "FunctionGroupBox";
@@ -52,17 +52,6 @@
             this.FunctionGroupBox.TabIndex = 0;
             this.FunctionGroupBox.TabStop = false;
             this.FunctionGroupBox.Text = "関数設定";
-            // 
-            // FunctionCheckedListBox
-            // 
-            this.FunctionCheckedListBox.FormattingEnabled = true;
-            this.FunctionCheckedListBox.Items.AddRange(new object[] {
-            "ブループリントで呼び出し可能",
-            "ゲッター用"});
-            this.FunctionCheckedListBox.Location = new System.Drawing.Point(6, 18);
-            this.FunctionCheckedListBox.Name = "FunctionCheckedListBox";
-            this.FunctionCheckedListBox.Size = new System.Drawing.Size(329, 200);
-            this.FunctionCheckedListBox.TabIndex = 2;
             // 
             // FunctionSettingButton
             // 
@@ -105,7 +94,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.PropertyCheckedListBox);
+            this.groupBox2.Controls.Add(this.gtPropertyCheckedListBoxControl);
             this.groupBox2.Controls.Add(this.PropertySettingButton);
             this.groupBox2.Location = new System.Drawing.Point(380, 56);
             this.groupBox2.Name = "groupBox2";
@@ -113,21 +102,6 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "変数設定";
-            // 
-            // PropertyCheckedListBox
-            // 
-            this.PropertyCheckedListBox.FormattingEnabled = true;
-            this.PropertyCheckedListBox.Items.AddRange(new object[] {
-            "エディタで編集、ブループリントで編集",
-            "エディタで編集",
-            "ブループリントで編集",
-            "エディタで閲覧、ブループリントで閲覧",
-            "エディタで閲覧",
-            "ブループリントで閲覧"});
-            this.PropertyCheckedListBox.Location = new System.Drawing.Point(6, 18);
-            this.PropertyCheckedListBox.Name = "PropertyCheckedListBox";
-            this.PropertyCheckedListBox.Size = new System.Drawing.Size(329, 200);
-            this.PropertyCheckedListBox.TabIndex = 3;
             // 
             // PropertySettingButton
             // 
@@ -138,6 +112,34 @@
             this.PropertySettingButton.Text = "コピー";
             this.PropertySettingButton.UseVisualStyleBackColor = true;
             this.PropertySettingButton.Click += new System.EventHandler(this.PropertySettingButton_Click);
+            // 
+            // gtPropertyCheckedListBoxControl
+            // 
+            this.gtPropertyCheckedListBoxControl.CheckLimit = 0;
+            this.gtPropertyCheckedListBoxControl.FormattingEnabled = true;
+            this.gtPropertyCheckedListBoxControl.Items.AddRange(new object[] {
+            "エディタで編集、ブループリントで編集",
+            "エディタで編集",
+            "ブループリントで編集",
+            "エディタで閲覧、ブループリントで閲覧",
+            "エディタで閲覧",
+            "ブループリントで閲覧"});
+            this.gtPropertyCheckedListBoxControl.Location = new System.Drawing.Point(6, 18);
+            this.gtPropertyCheckedListBoxControl.Name = "gtPropertyCheckedListBoxControl";
+            this.gtPropertyCheckedListBoxControl.Size = new System.Drawing.Size(329, 200);
+            this.gtPropertyCheckedListBoxControl.TabIndex = 4;
+            // 
+            // gtFunctionCheckedListBoxControl
+            // 
+            this.gtFunctionCheckedListBoxControl.CheckLimit = 0;
+            this.gtFunctionCheckedListBoxControl.FormattingEnabled = true;
+            this.gtFunctionCheckedListBoxControl.Items.AddRange(new object[] {
+            "ブループリントで呼び出し可能",
+            "ゲッター用"});
+            this.gtFunctionCheckedListBoxControl.Location = new System.Drawing.Point(6, 18);
+            this.gtFunctionCheckedListBoxControl.Name = "gtFunctionCheckedListBoxControl";
+            this.gtFunctionCheckedListBoxControl.Size = new System.Drawing.Size(329, 200);
+            this.gtFunctionCheckedListBoxControl.TabIndex = 5;
             // 
             // Form1
             // 
@@ -164,8 +166,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button PropertySettingButton;
-        private System.Windows.Forms.CheckedListBox FunctionCheckedListBox;
-        private System.Windows.Forms.CheckedListBox PropertyCheckedListBox;
+        private GTCustomControl.GTCheckedListBoxControl gtFunctionCheckedListBoxControl;
+        private GTCustomControl.GTCheckedListBoxControl gtPropertyCheckedListBoxControl;
     }
 }
 

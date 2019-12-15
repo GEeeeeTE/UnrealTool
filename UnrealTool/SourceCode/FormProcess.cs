@@ -61,5 +61,70 @@ namespace UnrealTool
             macroU += ")";
             Clipboard.SetText(macroU);
         }
+        private void MakeEnumerationUE()
+        {
+            string enumerationText = GTCS_GTL.EMPTYSTRING;
+
+            // UENUM()
+            {
+                enumerationText += "UENUM(BlueprintType)" + GTCS_GTL.GetNewLineString();
+            }
+            // enum class That : uint8
+            {
+                enumerationText += "enum class E" + EnumeratorTextBlockUserControl.TextBox + " : uint8" + GTCS_GTL.GetNewLineString();
+            }
+            // Enumeration Body
+            {
+                // {
+                enumerationText += "{" + GTCS_GTL.GetNewLineString();
+                {
+                    List<string> enumNameList = new List<string>(EnumeratorListBox.Items.Count);
+                    foreach (var item in EnumeratorListBox.Items)
+                    {
+                        enumNameList.Add(item.ToString());
+                    }
+                    bool bAddMaxEnum = false;
+                    foreach (int idxChecked in gtEnumeratorOptionCheckedListBoxControl.CheckedIndices)
+                    {
+                        if(idxChecked == 0)
+                        {
+                            enumNameList.AddRange(new string[]{ "MAX", "MAXIDX" });
+                            bAddMaxEnum = true;
+                        }
+                    }
+                    // Enumeration
+                    int theLastIndex = enumNameList.Count - 1;
+                    for (int i = 0; i < enumNameList.Count; i++)
+                    {
+                        enumerationText += GTCS_GTL.TABSTRING;
+                        enumerationText += enumNameList[i];
+                        if(GTCS_GTL.ConfirmTrue(bAddMaxEnum))
+                        {
+                            if (i == (theLastIndex - 1))
+                            {
+                                enumerationText += GTCS_GTL.TABSTRING + GetUMeta(GTCS_GTL.EMPTYSTRING, true);
+                            }
+                            else
+                            if (i == (theLastIndex))
+                            {
+                                enumerationText += " = " + enumNameList[i - 1] + " - 1";
+                                enumerationText += GTCS_GTL.TABSTRING + GetUMeta(GTCS_GTL.EMPTYSTRING, true);
+                            }
+                        }
+
+
+                        if (i < theLastIndex)
+                        {
+                            enumerationText += ",";
+                        }
+                        enumerationText += GTCS_GTL.GetNewLineString();
+                    }
+                }
+                // }
+                enumerationText += "};\n" + GTCS_GTL.GetNewLineString();
+            }
+
+            Clipboard.SetText(enumerationText);
+        }
     } // FormProcess
 }

@@ -59,11 +59,23 @@
       <DependentUpon>GTCheckedListBoxControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GTCSharpLibrary\CustomControl\GTFormControlInterface.cs" />
+    <Compile Include="GTCSharpLibrary\CustomControl\GTTextBoxControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GTCSharpLibrary\CustomControl\GTTextBoxControl.Designer.cs">
+      <DependentUpon>GTTextBoxControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="GTCSharpLibrary\GTCS_Class.cs" />
     <Compile Include="GTCSharpLibrary\GTCS_File.cs" />
     <Compile Include="GTCSharpLibrary\GTCS_GTL.cs" />
     <Compile Include="GTCSharpLibrary\GTCS_ReleaseInterface.cs" />
     <Compile Include="GTCSharpLibrary\GTCS_WindowsSystem.cs" />
+    <Compile Include="GTCSharpLibrary\UserControl\TextBlockUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GTCSharpLibrary\UserControl\TextBlockUserControl.Designer.cs">
+      <DependentUpon>TextBlockUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SourceCode\Accessor.cs">
@@ -83,6 +95,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GTCSharpLibrary\CustomControl\GTCheckedListBoxControl.resx">
       <DependentUpon>GTCheckedListBoxControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GTCSharpLibrary\CustomControl\GTTextBoxControl.resx">
+      <DependentUpon>GTTextBoxControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GTCSharpLibrary\UserControl\TextBlockUserControl.resx">
+      <DependentUpon>TextBlockUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
